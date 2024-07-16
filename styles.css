@@ -104,3 +104,9 @@ section {
     color: #555;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
 }
+
+.person-page .attribute {
+    font-size: 18px;
+    font-weight: bold;
+    margin-top: 20px;
+}
