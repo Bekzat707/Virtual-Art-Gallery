@@ -86,6 +86,29 @@
             bottom: 0;
             width: 100%;
         }
+
+        /* Styles for buttons */
+        .button-container {
+            display: flex;
+            justify-content: center;
+            margin-top: 1rem;
+        }
+
+        .button {
+            padding: 0.5rem 1rem;
+            margin: 0 0.5rem;
+            font-size: 1rem;
+            cursor: pointer;
+            border: none;
+            background-color: #333;
+            color: white;
+            border-radius: 4px;
+            transition: background-color 0.3s ease;
+        }
+
+        .button:hover {
+            background-color: #555;
+        }
     </style>
 </head>
 <body>
@@ -117,28 +140,39 @@
         </section>
     </main>
 
-    <audio id="myAudio" src="musics/sh.mp3" autoplay loop preload="auto">
+    <audio id="myAudio" src="musics/sh.mp3" preload="auto">
+        Your browser does not support the audio element.
     </audio>
+
+    <div class="button-container">
+        <button class="button" onclick="toggleAudio()">Play/Pause</button>
+        <button class="button" onclick="changeColor()">Change Color</button>
+    </div>
 
     <script>
         const audio = document.getElementById('myAudio');
+        const header = document.querySelector('header');
 
-        // Функция для визуальных эффектов при воспроизведении музыки
-        function playAudioWithEffects() {
-            // Пример: изменение цвета фона header при воспроизведении музыки
-            header.style.backgroundColor = '#ffcc00';
+        function toggleAudio() {
+            if (audio.paused) {
+                audio.play();
+            } else {
+                audio.pause();
+            }
         }
 
-        // Событие, которое вызывается при начале воспроизведения аудио
-        audio.onplay = function() {
-            playAudioWithEffects();
-        };
+        function changeColor() {
+            header.style.backgroundColor = getRandomColor();
+        }
 
-        // Событие, которое вызывается при остановке воспроизведения аудио
-        audio.onpause = function() {
-            // Возвращаем обычный цвет фона header
-            header.style.backgroundColor = '#333';
-        };
+        function getRandomColor() {
+            const letters = '0123456789ABCDEF';
+            let color = '#';
+            for (let i = 0; i < 6; i++) {
+                color += letters[Math.floor(Math.random() * 16)];
+            }
+            return color;
+        }
     </script>
 </body>
 </html>
