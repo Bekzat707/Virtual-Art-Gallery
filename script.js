@@ -28,8 +28,27 @@ document.addEventListener('DOMContentLoaded', () => {
             console.log('Autoplay was prevented:', error);
         });
     });
-    
-    
+    const audio = document.getElementById('myAudio');
+    const header = document.querySelector('header');
+
+    function toggleAudioAndChangeColor() {
+        if (audio.paused) {
+            audio.play();
+            changeColor();
+        } else {
+            audio.pause();
+            header.style.backgroundColor = '#333'; // Возвращаем обычный цвет фона
+        }
+    }
+
+    function changeColor() {
+        const letters = '0123456789ABCDEF';
+        let color = '#';
+        for (let i = 0; i < 6; i++) {
+            color += letters[Math.floor(Math.random() * 16)];
+        }
+        header.style.backgroundColor = color;
+    }
 
         const info = artInfo[id];
         if (info) {
