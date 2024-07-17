@@ -116,13 +116,29 @@
             </div>
         </section>
     </main>
-        <audio src="musics/sh.mp3"   loop preload="auto" autoplay="autoplay">
-    </audio>
-    <audio controls="controls" loop >
-        <source src = "musics/sh.mp3" type="audio/mp3">
-        <a href="musics/sh.mp3">Скачать</a>
+
+    <audio id="myAudio" src="musics/sh.mp3" autoplay loop preload="auto">
     </audio>
 
-    <script src="script.js"></script>
+    <script>
+        const audio = document.getElementById('myAudio');
+
+        // Функция для визуальных эффектов при воспроизведении музыки
+        function playAudioWithEffects() {
+            // Пример: изменение цвета фона header при воспроизведении музыки
+            header.style.backgroundColor = '#ffcc00';
+        }
+
+        // Событие, которое вызывается при начале воспроизведения аудио
+        audio.onplay = function() {
+            playAudioWithEffects();
+        };
+
+        // Событие, которое вызывается при остановке воспроизведения аудио
+        audio.onpause = function() {
+            // Возвращаем обычный цвет фона header
+            header.style.backgroundColor = '#333';
+        };
+    </script>
 </body>
 </html>
