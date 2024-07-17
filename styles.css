@@ -130,11 +130,10 @@ section {
     border-radius: 10px;
     box-shadow: 0 4px 8px rgb(0, 77, 255);
 }
-
-.quote-con{
+.quote-contai{
     background-color: #f9f9f9;
-    padding:  11px;
+    padding:  5px;
     margin-bottom: 10px;
     border-radius: 10px;
-    box-shadow: 0 4px 8px rgb(0, 255, 191);
+    box-shadow: 0 4px 8px rgb(0, 77, 255);
 }
