@@ -129,6 +129,10 @@
             <h2>Dano4ko🙈</h2>
             <div class="quote-container">
                 <p class="quote">Твоя красивая улыбка подобна солнечному лучу в мой день!🌝</p>
+                <div class="button-container">
+                    <button class="button" onclick="toggleAudio()">Play/Pause</button>
+                    <button class="button" onclick="changeColor()">Change Color</button>
+                </div>
             </div>
             <div class="gallery">
                 <img src="images/91.jpg" alt="Person 2 Photo 1">
@@ -143,11 +147,6 @@
     <audio id="myAudio" src="musics/sh.mp3" preload="auto">
         Your browser does not support the audio element.
     </audio>
-
-    <div class="button-container">
-        <button class="button" onclick="toggleAudio()">Play/Pause</button>
-        <button class="button" onclick="changeColor()">Change Color</button>
-    </div>
 
     <script>
         const audio = document.getElementById('myAudio');
