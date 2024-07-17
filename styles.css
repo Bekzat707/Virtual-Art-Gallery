@@ -112,13 +112,13 @@ section {
 }
 .quote-container {
     background-color: #f9f9f9;
-    padding: 20px;
+    padding: 10px;
     margin-bottom: 20px;
     border-radius: 10px;
     box-shadow: 0 4px 8px rgb(255, 0, 0);
 }
 .quote {
-    font-size: 20px;
+    font-size: 24px;
     margin: 0;
     font-style: italic;
     color: #000000;
