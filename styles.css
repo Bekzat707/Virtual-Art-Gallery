@@ -138,5 +138,8 @@ section {
     box-shadow: 0 4px 8px rgb(0, 77, 255);
 }
 .quote-cont{
+    background-color: #f9f9f9;
+    margin-bottom: px;
+    border-radius: 10px;
     box-shadow: 0 4px 8px rgb(0, 255, 251);
 }
