@@ -101,7 +101,7 @@ section {
     font-size: 24px;
     margin-bottom: 20px;
     font-style: italic;
-    color: #555;
+    color: #000000;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
 }
 
@@ -110,7 +110,7 @@ section {
     font-weight: bold;
     margin-top: 20px;
 }
-.social-icons {
+.quote-container {
     background-color: #f9f9f9;
     padding: 20px;
     margin-bottom: 20px;
