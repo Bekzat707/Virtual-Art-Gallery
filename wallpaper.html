@@ -92,19 +92,35 @@
         }
 
         @media (max-width: 600px) {
-            main {
-                padding: 1rem;
-            }
+    /* Общие стили для мобильных устройств */
+    body {
+        background: linear-gradient(135deg, rgba(8, 0, 255, 0.886), rgba(0, 187, 255, 0.875));
+    }
 
-            #searchInput {
-                width: 90%;
-            }
+    main {
+        padding: 1rem;
+    }
 
-            .wallpaper-item {
-                width: 100%;
-                max-width: 100%;
-            }
-        }
+    #searchInput {
+        width: 90%;
+    }
+
+    .wallpaper-item {
+        width: 100%;
+        max-width: 100%;
+    }
+
+    .wallpaper-wrapper {
+        margin: 10px auto;
+    }
+    
+    /* Переопределение стилей для кнопок */
+    .download-button {
+        padding: 0.5rem 1rem;
+        margin-top: 10px;
+    }
+}
+
         /* wallpaper-styles.css */
 
 button {
