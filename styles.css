@@ -1,167 +1,114 @@
 /* styles.css */
 
 body {
-    font-family: 'Arial', sans-serif;
+    font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-    background: linear-gradient(135deg, #f06, #f90);
+    background-color: #f5f5f5;
     color: #333;
 }
 
 header {
-    background: #333;
+    background-color: #333;
     color: #fff;
-    padding: 1rem 0;
+    padding: 10px 0;
     text-align: center;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-header h1 {
-    font-size: 1.5rem; /* Adjusted font size for smaller screens */
-    margin: 0;
-    animation: fadeInDown 1s ease-out;
-}
-
-header nav ul {
+nav ul {
     list-style: none;
     padding: 0;
     margin: 0;
+    display: flex;
+    justify-content: center;
 }
 
-header nav ul li {
-    display: inline;
-    margin: 0 1rem;
+nav ul li {
+    margin: 0 15px;
 }
 
-header nav ul li a {
+nav ul li a {
     color: #fff;
     text-decoration: none;
-    transition: color 0.3s;
-}
-
-header nav ul li a:hover {
-    color: #ff9900;
+    font-weight: bold;
 }
 
 main {
-    padding: 1rem; /* Adjusted padding */
-    text-align: center;
-    animation: fadeInUp 1s ease-out;
+    padding: 20px;
 }
 
-#searchInput {
-    width: 90%; /* Adjusted width */
-    padding: 0.5rem;
-    margin: 1rem 0;
-    border: 2px solid #333;
-    border-radius: 5px;
-    transition: border 0.3s;
+section {
+    margin-bottom: 40px;
 }
 
-#searchInput:focus {
-    border-color: #ff9900;
-}
-
-button {
-    padding: 0.5rem 1rem;
-    margin: 0.5rem;
-    background-color: #333;
-    color: #fff;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s, transform 0.3s;
-}
-
-button:hover {
-    background-color: #ff9900;
-    transform: scale(1.05);
-}
-
-.search-container {
+.gallery {
     display: flex;
-    justify-content: center;
     flex-wrap: wrap;
+    justify-content: center;
 }
 
-.wallpaper-item {
+.art-piece {
+    position: relative;
+    margin: 10px;
+    cursor: pointer;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.art-piece img {
     width: 100%;
-    max-width: 200px;
     height: auto;
-    margin: 10px auto;
-    display: block;
-    border: 2px solid #333;
-    border-radius: 10px;
-    transition: transform 0.3s, border-color 0.3s;
+    transition: transform 0.3s ease, box-shadow 0.3s;
+    border: 5px solid #fff;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
-.wallpaper-item:hover {
-    transform: scale(1.05);
-    border-color: #ff9900;
+.art-piece:hover img {
+    transform: rotateY(10deg) rotateX(10deg);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
 }
 
-.download-button {
-    display: inline-block;
-    margin-top: 10px;
-    padding: 0.5rem 1rem;
-    background-color: #333;
-    color: #fff;
-    text-decoration: none;
-    border-radius: 5px;
-    transition: background-color 0.3s, transform 0.3s;
+.gallery .art-piece {
+    flex: 1 1 calc(33.333% - 20px);
+    box-sizing: border-box;
 }
 
-.download-button:hover {
-    background-color: #ff9900;
-    transform: scale(1.05);
+@media (max-width: 768px) {
+    .gallery .art-piece {
+        flex: 1 1 calc(50% - 20px);
+    }
 }
 
-.wallpaper-wrapper {
-    display: inline-block;
-    margin: 20px;
+@media (max-width: 480px) {
+    .gallery .art-piece {
+        flex: 1 1 100%;
+    }
+
+    nav ul {
+        flex-direction: column;
+    }
+
+    nav ul li {
+        margin: 10px 0;
+    }
+}
+
+.person-page {
     text-align: center;
+    padding: 20px;
 }
 
-@keyframes fadeInDown {
-    from {
-        opacity: 0;
-        transform: translateY(-20px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
+.person-page .quote {
+    font-size: 24px;
+    margin-bottom: 20px;
+    font-style: italic;
+    color: #000000;
+    text-shadow: 2px 2px 4px rgba(255, 255, 255, 0.3);
 }
 
-@keyframes fadeInUp {
-    from {
-        opacity: 0;
-        transform: translateY(20px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-@media (max-width: 600px) {
-    header h1 {
-        font-size: 1.2rem; /* Further reduced font size for smaller screens */
-    }
-
-    main {
-        padding: 0.5rem; /* Adjusted padding */
-    }
-
-    #searchInput {
-        width: 100%;
-    }
-
-    .wallpaper-item {
-        width: 100%;
-        max-width: 100%;
-    }
+.person-page .attribute {
+    font-size: 18px;
+    font-weight: bold;
+    margin-top: 20px;
 }
 .quote-container {
     background-color: #f9f9f9;
@@ -195,4 +142,9 @@ button:hover {
     margin-bottom: px;
     border-radius: 10px;
     box-shadow: 0 4px 8px rgb(0, 255, 251);
+}
+.wallpaper-item {
+    width: 200px;
+    height: auto;
+    margin: 10px;
 }
