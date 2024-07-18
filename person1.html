@@ -64,6 +64,27 @@
                 width: calc(33.333% - 2rem);
             }
         }
+        .button-container {
+            display: flex;
+            justify-content: center;
+            margin-top: 1rem;
+        }
+
+        .button {
+            padding: 0.5rem 1rem;
+            margin: 0 0.5rem;
+            font-size: 1rem;
+            cursor: pointer;
+            border: none;
+            background-color: #333;
+            color: white;
+            border-radius: 4px;
+            transition: background-color 0.3s ease;
+        }
+
+        .button:hover {
+            background-color: #555;
+        }
     </style>
 </head>
 <body>
@@ -85,16 +106,49 @@
             
             <div class ="quote-contai">
                 <p><h3><center>Shym-Ala✈</center></h3></p>
+                <div class="button-container">
+                    <button class="button" onclick="toggleAudio()">Play/Pause</button>
+                   
+                </div>
             </div>
             <div class="gallery">
                 <img src="images/75.jpg" alt="Person 1 Photo 1">
                 <img src="images/18.jpg" alt="Person 1 Photo 2">
                 <img src="images/16.jpg" alt="Person 1 Photo 3">
-                <img src="images/72.jpg" alt="Person 1 Photo 1">
+                <img src="images/100.jpg" alt="Person 1 Photo 1">
                 <img src="images/73.jpg" alt="Person 1 Photo 1">
-                <img src="images/74.jpg" alt="Person 1 Photo 1">
+                <img src="images/102.jpg" alt="Person 1 Photo 1">
             </div>
         </section>
+        <audio id="myAudio" src="musics/asik.mp3" preload="auto">
+            Your browser does not support the audio element.
+        </audio>
+    
+        <script>
+            const audio = document.getElementById('myAudio');
+            const header = document.querySelector('header');
+    
+            function toggleAudio() {
+                if (audio.paused) {
+                    audio.play();
+                } else {
+                    audio.pause();
+                }
+            }
+    
+            function changeColor() {
+                header.style.backgroundColor = getRandomColor();
+            }
+    
+            function getRandomColor() {
+                const letters = '0123456789ABCDEF';
+                let color = '#';
+                for (let i = 0; i < 6; i++) {
+                    color += letters[Math.floor(Math.random() * 16)];
+                }
+                return color;
+            }
+        </script>
     </main>
 </body>
 </html>
